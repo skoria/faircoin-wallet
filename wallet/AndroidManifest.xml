@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="de.schildbach.wallet"
+	package="de.schildbach.wallet.faircoin"
 	android:installLocation="internalOnly"
-	android:versionCode="211"
-	android:versionName="4.21" >
+	android:versionCode="213"
+	android:versionName="4.21.3" >
 
 	<uses-sdk
 		android:minSdkVersion="15"
@@ -56,7 +56,7 @@
 	<application
 		android:name="de.schildbach.wallet.WalletApplication"
 		android:allowBackup="false"
-		android:icon="@drawable/ic_app_color_48dp"
+		android:icon="@drawable/app_icon"
 		android:label="@string/app_name" >
 		<activity
 			android:name="de.schildbach.wallet.ui.WalletActivity"
@@ -91,7 +91,7 @@
 			<intent-filter android:label="@string/send_coins_activity_title" >
 				<action android:name="android.intent.action.VIEW" />
 
-				<data android:scheme="bitcoin" />
+				<data android:scheme="faircoin" />
 
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
@@ -99,7 +99,7 @@
 			<intent-filter android:label="@string/send_coins_activity_title" >
 				<action android:name="android.nfc.action.NDEF_DISCOVERED" />
 
-				<data android:scheme="bitcoin" />
+				<data android:scheme="faircoin" />
 
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
@@ -183,15 +183,15 @@
 
 		<provider
 			android:name="de.schildbach.wallet.AddressBookProvider"
-			android:authorities="de.schildbach.wallet.address_book"
+			android:authorities="de.schildbach.wallet.faircoin.address_book"
 			android:exported="false" />
 		<provider
 			android:name="de.schildbach.wallet.ExchangeRatesProvider"
-			android:authorities="de.schildbach.wallet.exchange_rates"
+			android:authorities="de.schildbach.wallet.faircoin.exchange_rates"
 			android:exported="false" />
 		<provider
 			android:name="de.schildbach.wallet.FileAttachmentProvider"
-			android:authorities="de.schildbach.wallet.file_attachment"
+			android:authorities="de.schildbach.wallet.faircoin.file_attachment"
 			android:exported="false"
 			android:grantUriPermissions="true" />
 

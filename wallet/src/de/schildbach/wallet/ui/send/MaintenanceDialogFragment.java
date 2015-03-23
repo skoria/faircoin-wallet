@@ -60,7 +60,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.ui.AbstractWalletActivity;
 import de.schildbach.wallet.ui.DialogBuilder;
-import de.schildbach.wallet.R;
+import de.schildbach.wallet.faircoin.R;
 
 /**
  * @author Andreas Schildbach

@@ -52,7 +52,7 @@ import com.google.common.io.BaseEncoding;
 
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.Io;
-import de.schildbach.wallet.R;
+import de.schildbach.wallet.faircoin.R;
 
 /**
  * @author Andreas Schildbach
@@ -68,7 +68,9 @@ public final class RequestWalletBalanceTask
 	private static final Logger log = LoggerFactory.getLogger(RequestWalletBalanceTask.class);
 
 	private final BaseEncoding HEX = BaseEncoding.base16().lowerCase();
-
+	
+	private static boolean eanbleRequestWalletBalance = false;
+	
 	public interface ResultCallback
 	{
 		void onResult(Collection<Transaction> transactions);
@@ -87,6 +89,9 @@ public final class RequestWalletBalanceTask
 
 	public void requestWalletBalance(final Address... addresses)
 	{
+		if (!eanbleRequestWalletBalance)
+			return;
+		
 		backgroundHandler.post(new Runnable()
 		{
 			@Override

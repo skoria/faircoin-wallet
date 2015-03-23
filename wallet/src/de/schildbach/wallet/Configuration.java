@@ -59,8 +59,8 @@ public class Configuration
 	public static final String PREFS_KEY_REMIND_BACKUP = "remind_backup";
 	private static final String PREFS_KEY_LAST_BACKUP = "last_backup";
 
-	private static final int PREFS_DEFAULT_BTC_SHIFT = 3;
-	private static final int PREFS_DEFAULT_BTC_PRECISION = 2;
+	private static final int PREFS_DEFAULT_BTC_SHIFT = 0;
+	private static final int PREFS_DEFAULT_BTC_PRECISION = 6;
 
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 
@@ -73,7 +73,7 @@ public class Configuration
 
 	private int getBtcPrecision()
 	{
-		final String precision = prefs.getString(PREFS_KEY_BTC_PRECISION, null);
+		final String precision = prefs.getString(PREFS_KEY_BTC_PRECISION, "6");
 		if (precision != null)
 			return precision.charAt(0) - '0';
 		else
@@ -101,11 +101,11 @@ public class Configuration
 	{
 		final int shift = getBtcShift();
 		if (shift == 0)
-			return new MonetaryFormat().shift(0).minDecimals(2).optionalDecimals(2, 2, 2);
+			return new MonetaryFormat().shift(0).minDecimals(2).optionalDecimals(2, 2);
 		else if (shift == 3)
-			return new MonetaryFormat().shift(3).minDecimals(2).optionalDecimals(2, 1);
+			return new MonetaryFormat().shift(3).minDecimals(2).optionalDecimals(1);
 		else
-			return new MonetaryFormat().shift(6).minDecimals(0).optionalDecimals(2);
+			return new MonetaryFormat().shift(6).minDecimals(0);
 	}
 
 	public boolean getConnectivityNotificationEnabled()

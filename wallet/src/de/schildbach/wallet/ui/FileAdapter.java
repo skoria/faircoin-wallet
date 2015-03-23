@@ -28,7 +28,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import de.schildbach.wallet.R;
+import de.schildbach.wallet.faircoin.R;
 
 /**
  * @author Andreas Schildbach

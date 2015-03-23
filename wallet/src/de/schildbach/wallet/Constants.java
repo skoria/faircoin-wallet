@@ -27,7 +27,7 @@ import org.bitcoinj.utils.MonetaryFormat;
 import android.os.Build;
 import android.os.Environment;
 import android.text.format.DateUtils;
-import de.schildbach.wallet.R;
+import de.schildbach.wallet.faircoin.R;
 
 /**
  * @author Andreas Schildbach
@@ -56,10 +56,10 @@ public final class Constants
 		public static final File EXTERNAL_WALLET_BACKUP_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 
 		/** Filename of the manual key backup (old format, can only be read). */
-		public static final String EXTERNAL_WALLET_KEY_BACKUP = "bitcoin-wallet-keys" + FILENAME_NETWORK_SUFFIX;
+		public static final String EXTERNAL_WALLET_KEY_BACKUP = "faircoin-wallet-keys" + FILENAME_NETWORK_SUFFIX;
 
 		/** Filename of the manual wallet backup. */
-		public static final String EXTERNAL_WALLET_BACKUP = "bitcoin-wallet-backup" + FILENAME_NETWORK_SUFFIX;
+		public static final String EXTERNAL_WALLET_BACKUP = "faircoin-wallet-backup" + FILENAME_NETWORK_SUFFIX;
 
 		/** Filename of the block store for storing the chain. */
 		public static final String BLOCKCHAIN_FILENAME = "blockchain" + FILENAME_NETWORK_SUFFIX;
@@ -71,8 +71,8 @@ public final class Constants
 	/** Maximum size of backups. Files larger will be rejected. */
 	public static final long BACKUP_MAX_CHARS = 10000000;
 
-	private static final String EXPLORE_BASE_URL_PROD = "https://www.biteasy.com/";
-	private static final String EXPLORE_BASE_URL_TEST = "https://www.biteasy.com/testnet/";
+	private static final String EXPLORE_BASE_URL_PROD = "https://chain.fair-coin.org/";
+	private static final String EXPLORE_BASE_URL_TEST = "https://chain.fair-coin.org/chain/FCTestnet";
 	/** Base URL for browsing transactions, blocks or addresses. */
 	public static final String EXPLORE_BASE_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? EXPLORE_BASE_URL_PROD
 			: EXPLORE_BASE_URL_TEST;
@@ -84,7 +84,7 @@ public final class Constants
 			: BITEASY_API_URL_TEST;
 
 	/** URL to fetch version alerts from. */
-	public static final String VERSION_URL = "http://wallet.schildbach.de/version";
+	public static final String VERSION_URL = "https://chain.fair-coin.org/android-wallet-version";
 
 	/** MIME type used for transmitting single transactions. */
 	public static final String MIMETYPE_TRANSACTION = "application/x-btctx";
@@ -96,16 +96,16 @@ public final class Constants
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
 
 	/** User-agent to use for network access. */
-	public static final String USER_AGENT = "Bitcoin Wallet";
+	public static final String USER_AGENT = "FairCoin Wallet";
 
 	/** Default currency to use if all default mechanisms fail. */
 	public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
 
 	/** Donation address for tip/donate action. */
-	public static final String DONATION_ADDRESS = "18CK5k1gajRKKSC7yVSTXT9LUzbheh1XY4";
+	public static final String DONATION_ADDRESS = "fairVs8iHyLzgHQrdxb9j6hR4WGpdDbKN3";
 
 	/** Recipient e-mail address for reports. */
-	public static final String REPORT_EMAIL = "bitcoin.wallet.developers@gmail.com";
+	public static final String REPORT_EMAIL = "android.wallet@fair-coin.org";
 
 	/** Subject line for manually reported issues. */
 	public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
@@ -125,8 +125,8 @@ public final class Constants
 
 	public static final MonetaryFormat LOCAL_FORMAT = new MonetaryFormat().noCode().minDecimals(2).optionalDecimals();
 
-	public static final String SOURCE_URL = "https://github.com/schildbach/bitcoin-wallet";
-	public static final String BINARY_URL = "https://github.com/schildbach/bitcoin-wallet/releases";
+	public static final String SOURCE_URL = "https://github.com/FairCoinTeam/faircoin-wallet.git";
+	public static final String BINARY_URL = "https://github.com/FairCoinTeam/faircoin-wallet.git/releases";
 	public static final String MARKET_APP_URL = "market://details?id=%s";
 	public static final String WEBMARKET_APP_URL = "https://play.google.com/store/apps/details?id=%s";
 

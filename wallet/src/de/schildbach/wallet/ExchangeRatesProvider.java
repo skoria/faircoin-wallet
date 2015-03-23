@@ -99,21 +99,19 @@ public class ExchangeRatesProvider extends ContentProvider
 	private Map<String, ExchangeRate> exchangeRates = null;
 	private long lastUpdated = 0;
 
-	private static final URL BITCOINAVERAGE_URL;
-	private static final String[] BITCOINAVERAGE_FIELDS = new String[] { "24h_avg", "last" };
-	private static final String BITCOINAVERAGE_SOURCE = "BitcoinAverage.com";
-	private static final URL BLOCKCHAININFO_URL;
-	private static final String[] BLOCKCHAININFO_FIELDS = new String[] { "15m" };
-	private static final String BLOCKCHAININFO_SOURCE = "blockchain.info";
-
-	// https://bitmarket.eu/api/ticker
+	private static final URL GETFAIRCOIN_URL;
+	private static final String[] GETFAIRCOIN_FIELDS = new String[] { "last" };
+	private static final String GETFAIRCOIN_SOURCE = "getfaircoin.net";
+	private static final URL FAIRCOIN_ORG_URL;
+	private static final String[] FAIRCOIN_ORG_FIELDS = new String[] { "last" };
+	private static final String FAIRCOIN_ORG_SOURCE = "chain.fair-coin.org";
 
 	static
 	{
 		try
 		{
-			BITCOINAVERAGE_URL = new URL("https://api.bitcoinaverage.com/custom/abw");
-			BLOCKCHAININFO_URL = new URL("https://blockchain.info/ticker");
+			GETFAIRCOIN_URL = new URL("https://getfaircoin.net/api/ticker");
+			FAIRCOIN_ORG_URL = new URL("https://chain.fair-coin.org/download/ticker");
 		}
 		catch (final MalformedURLException x)
 		{
@@ -163,9 +161,9 @@ public class ExchangeRatesProvider extends ContentProvider
 		{
 			Map<String, ExchangeRate> newExchangeRates = null;
 			if (newExchangeRates == null)
-				newExchangeRates = requestExchangeRates(BITCOINAVERAGE_URL, userAgent, BITCOINAVERAGE_SOURCE, BITCOINAVERAGE_FIELDS);
+				newExchangeRates = requestExchangeRates(GETFAIRCOIN_URL, userAgent, GETFAIRCOIN_SOURCE, GETFAIRCOIN_FIELDS);
 			if (newExchangeRates == null)
-				newExchangeRates = requestExchangeRates(BLOCKCHAININFO_URL, userAgent, BLOCKCHAININFO_SOURCE, BLOCKCHAININFO_FIELDS);
+				newExchangeRates = requestExchangeRates(FAIRCOIN_ORG_URL, userAgent, FAIRCOIN_ORG_SOURCE, FAIRCOIN_ORG_FIELDS);
 
 			if (newExchangeRates != null)
 			{

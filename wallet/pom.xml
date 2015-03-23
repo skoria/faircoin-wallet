@@ -4,10 +4,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>wallet</artifactId>
+	<artifactId>faircoin-wallet</artifactId>
 	<packaging>apk</packaging>
-	<version>4.21</version>
-	<name>Bitcoin Wallet</name>
+	<version>4.21.3</version>
+	<name>FairCoin Wallet</name>
 
 	<parent>
 		<groupId>de.schildbach.wallet</groupId>
@@ -65,7 +65,7 @@
 		<!-- com.google.bitcoin.* -->
 		<dependency>
 			<groupId>org.bitcoinj</groupId>
-			<artifactId>bitcoinj-core</artifactId>
+			<artifactId>faircoinj-core</artifactId>
 			<version>0.12.2</version>
 		</dependency>
 
