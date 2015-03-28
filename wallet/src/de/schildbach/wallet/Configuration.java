@@ -60,7 +60,7 @@ public class Configuration
 	private static final String PREFS_KEY_LAST_BACKUP = "last_backup";
 
 	private static final int PREFS_DEFAULT_BTC_SHIFT = 0;
-	private static final int PREFS_DEFAULT_BTC_PRECISION = 6;
+	private static final int PREFS_DEFAULT_BTC_PRECISION = 2;
 
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 
@@ -73,7 +73,7 @@ public class Configuration
 
 	private int getBtcPrecision()
 	{
-		final String precision = prefs.getString(PREFS_KEY_BTC_PRECISION, "6");
+		final String precision = prefs.getString(PREFS_KEY_BTC_PRECISION, "2");
 		if (precision != null)
 			return precision.charAt(0) - '0';
 		else
