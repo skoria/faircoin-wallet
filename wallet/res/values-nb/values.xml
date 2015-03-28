@@ -4,7 +4,7 @@
 	<string-array name="preferences_precision_labels">
 		<item>FAIR, 6 desimaler</item>
 		<item>FAIR, 4 desimaler</item>
-		<item>mFAIR, 2 desimaler</item>
+		<item>FAIR, 2 desimaler</item>
 		<item>µFAIR, ingen desimaler</item>
 	</string-array>
 

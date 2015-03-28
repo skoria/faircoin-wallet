@@ -9,13 +9,13 @@
 	<string-array name="preferences_precision_values">
 		<item>6</item>
 		<item>4</item>
-		<item>2/3</item>
+		<item>2</item>
 		<item>0/6</item>
 	</string-array>
 	<string-array name="preferences_precision_labels">
 		<item>FAIR, 6 digits</item>
 		<item>FAIR, 4 digits</item>
-		<item>mFAIR, 2 digits</item>
+		<item>FAIR, 2 digits</item>
 		<item>µFAIR, no digits</item>
 	</string-array>
 
